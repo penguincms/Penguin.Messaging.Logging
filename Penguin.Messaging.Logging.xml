@@ -124,46 +124,46 @@
             </summary>
             <param name="message">The message to include</param>
         </member>
-        <member name="T:Penguin.Messaging.Logging.Messages.Error`1">
+        <member name="T:Penguin.Messaging.Logging.Messages.ErrorMessage`1">
             <summary>
             A log message representing an error
             </summary>
             <typeparam name="T">The source of the error</typeparam>
         </member>
-        <member name="P:Penguin.Messaging.Logging.Messages.Error`1.Level">
+        <member name="P:Penguin.Messaging.Logging.Messages.ErrorMessage`1.Level">
             <summary>
             Will always be Error
             </summary>
         </member>
-        <member name="M:Penguin.Messaging.Logging.Messages.Error`1.#ctor(System.String)">
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage`1.#ctor(System.String)">
             <summary>
             Create a new error message using the specified string as a base
             </summary>
             <param name="message">The message to use</param>
         </member>
-        <member name="M:Penguin.Messaging.Logging.Messages.Error`1.#ctor(System.Exception)">
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage`1.#ctor(System.Exception)">
             <summary>
             Creates an instance of the error message using the error as a source
             </summary>
             <param name="ex">The exception to log</param>
         </member>
-        <member name="T:Penguin.Messaging.Logging.Messages.Error">
+        <member name="T:Penguin.Messaging.Logging.Messages.ErrorMessage">
             <summary>
             A log message representing an error
             </summary>
         </member>
-        <member name="P:Penguin.Messaging.Logging.Messages.Error.Level">
+        <member name="P:Penguin.Messaging.Logging.Messages.ErrorMessage.Level">
             <summary>
             Will always be Error
             </summary>
         </member>
-        <member name="M:Penguin.Messaging.Logging.Messages.Error.#ctor(System.String)">
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage.#ctor(System.String)">
             <summary>
             Create a new error message using the specified string as a base
             </summary>
             <param name="message">The message to use</param>
         </member>
-        <member name="M:Penguin.Messaging.Logging.Messages.Error.#ctor(System.Exception)">
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage.#ctor(System.Exception)">
             <summary>
             Creates an instance of the error message using the error as a source
             </summary>

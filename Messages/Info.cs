@@ -6,16 +6,10 @@
     /// <typeparam name="T">The source of the message</typeparam>
     public class Info<T> : LogMessage<T>
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Info
         /// </summary>
         public override LogLevel Level => LogLevel.Info;
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Creates a new instance using the specified message string
@@ -24,8 +18,6 @@
         public Info(string message) : base(message)
         {
         }
-
-        #endregion Constructors
     }
 
     /// <summary>
@@ -33,16 +25,10 @@
     /// </summary>
     public class Info : LogMessage
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Info
         /// </summary>
         public override LogLevel Level => LogLevel.Info;
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Creates a new instance using the specified message string
@@ -50,7 +36,5 @@
         public Info(string message) : base(message)
         {
         }
-
-        #endregion Constructors
     }
 }

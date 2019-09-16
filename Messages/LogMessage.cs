@@ -1,5 +1,6 @@
 ﻿using Penguin.Messaging.Abstractions.Messages;
 using System;
+using System.Diagnostics.Contracts;
 
 namespace Penguin.Messaging.Logging.Messages
 {
@@ -9,8 +10,6 @@ namespace Penguin.Messaging.Logging.Messages
     /// <typeparam name="T">The type of the system involved</typeparam>
     public class LogMessage<T> : Message
     {
-        #region Properties
-
         /// <summary>
         /// The log level. defaults to Debug
         /// </summary>
@@ -20,10 +19,6 @@ namespace Penguin.Messaging.Logging.Messages
         /// The message associated with this event
         /// </summary>
         public string Message { get; set; }
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Creates a new LogMessage with the associated message
@@ -40,11 +35,10 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="ex">The exception to log</param>
         public LogMessage(Exception ex) : base()
         {
+            Contract.Requires(ex != null);
             this.Level = LogLevel.Error;
             this.Message = $"{ex.Message}\r\n{ex.StackTrace}";
         }
-
-        #endregion Constructors
     }
 
     /// <summary>
@@ -52,8 +46,6 @@ namespace Penguin.Messaging.Logging.Messages
     /// </summary>
     public class LogMessage : Message
     {
-        #region Properties
-
         /// <summary>
         /// Defaults to Debug
         /// </summary>
@@ -63,10 +55,6 @@ namespace Penguin.Messaging.Logging.Messages
         /// the associated message for this log
         /// </summary>
         public string Message { get; set; }
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Creates a new instance of the log message using the specified message
@@ -83,10 +71,9 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="ex">The exception to log</param>
         public LogMessage(Exception ex) : base()
         {
+            Contract.Requires(ex != null);
             this.Level = LogLevel.Error;
             this.Message = $"{ex.GetType()}: {ex.Message}\r\n{ex.StackTrace}";
         }
-
-        #endregion Constructors
     }
 }

@@ -6,24 +6,18 @@ namespace Penguin.Messaging.Logging.Messages
     /// A log message representing an error
     /// </summary>
     /// <typeparam name="T">The source of the error</typeparam>
-    public class Error<T> : LogMessage<T>
+    public class ErrorMessage<T> : LogMessage<T>
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Error
         /// </summary>
         public override LogLevel Level => LogLevel.Error;
 
-        #endregion Properties
-
-        #region Constructors
-
         /// <summary>
         /// Create a new error message using the specified string as a base
         /// </summary>
         /// <param name="message">The message to use</param>
-        public Error(string message) : base(message)
+        public ErrorMessage(string message) : base(message)
         {
         }
 
@@ -31,32 +25,24 @@ namespace Penguin.Messaging.Logging.Messages
         /// Creates an instance of the error message using the error as a source
         /// </summary>
         /// <param name="ex">The exception to log</param>
-        public Error(Exception ex) : base(ex) { }
-
-        #endregion Constructors
+        public ErrorMessage(Exception ex) : base(ex) { }
     }
 
     /// <summary>
     /// A log message representing an error
     /// </summary>
-    public class Error : LogMessage
+    public class ErrorMessage : LogMessage
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Error
         /// </summary>
         public override LogLevel Level => LogLevel.Error;
 
-        #endregion Properties
-
-        #region Constructors
-
         /// <summary>
         /// Create a new error message using the specified string as a base
         /// </summary>
         /// <param name="message">The message to use</param>
-        public Error(string message) : base(message)
+        public ErrorMessage(string message) : base(message)
         {
         }
 
@@ -64,8 +50,6 @@ namespace Penguin.Messaging.Logging.Messages
         /// Creates an instance of the error message using the error as a source
         /// </summary>
         /// <param name="ex">The exception to log</param>
-        public Error(Exception ex) : base(ex) { }
-
-        #endregion Constructors
+        public ErrorMessage(Exception ex) : base(ex) { }
     }
 }

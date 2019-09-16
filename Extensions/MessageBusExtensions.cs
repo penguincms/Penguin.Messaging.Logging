@@ -1,6 +1,7 @@
 ﻿using Penguin.Messaging.Core;
 using Penguin.Messaging.Logging.Messages;
 using System;
+using System.Diagnostics.Contracts;
 
 namespace Penguin.Messaging.Logging.Extensions
 {
@@ -9,8 +10,6 @@ namespace Penguin.Messaging.Logging.Extensions
     public static class MessageBusExtensions
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
-        #region Methods
-
         /// <summary>
         /// Logs an error message to the message bus
         /// </summary>
@@ -18,9 +17,10 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="ex">The exception to log</param>
         public static void Log(this MessageBus messageBus, Exception ex)
         {
+            Contract.Requires(messageBus != null);
             while (ex != null)
             {
-                messageBus.Send(new Error(ex));
+                messageBus.Send(new ErrorMessage(ex));
                 ex = ex.InnerException;
             }
         }
@@ -31,7 +31,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="messageBus">The messagebus to use</param>
         /// <param name="Message">The message to send</param>
         /// <param name="level">The log level</param>
-        public static void Log(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info) => messageBus.Send(new LogMessage(Message) { Level = level });
+        public static void Log(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info)
+        {
+            Contract.Requires(messageBus != null);
+            messageBus.Send(new LogMessage(Message) { Level = level });
+        }
 
         /// <summary>
         /// Logs an error message to the message bus
@@ -41,9 +45,10 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="ex">The exception to log</param>
         public static void Log<T>(this MessageBus messageBus, Exception ex)
         {
+            Contract.Requires(messageBus != null);
             while (ex != null)
             {
-                messageBus.Send(new Error<T>(ex));
+                messageBus.Send(new ErrorMessage<T>(ex));
                 ex = ex.InnerException;
             }
         }
@@ -55,11 +60,10 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="messageBus">The messagebus to use</param>
         /// <param name="Message">The message to send</param>
         /// <param name="level">The log level</param>
-        public static void Log<T>(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info) => messageBus.Send(new LogMessage<T>(Message) { Level = level });
-
-        internal static void Log(object p)
+        public static void Log<T>(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info)
         {
-            throw new NotImplementedException();
+            Contract.Requires(messageBus != null);
+            messageBus.Send(new LogMessage<T>(Message) { Level = level });
         }
 
         /// <summary>
@@ -67,7 +71,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// </summary>
         /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message text</param>
-        public static void Warn(this MessageBus messageBus, string Message) => messageBus.Send(new LogMessage(Message) { Level = LogLevel.Warning });
+        public static void Warn(this MessageBus messageBus, string Message)
+        {
+            Contract.Requires(messageBus != null);
+            messageBus.Send(new LogMessage(Message) { Level = LogLevel.Warning });
+        }
 
         /// <summary>
         /// Logs a string as a warning
@@ -75,14 +83,23 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <typeparam name="T">The message source</typeparam>
         /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message text</param>
-        public static void Warn<T>(this MessageBus messageBus, string Message) => messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Warning });
+        public static void Warn<T>(this MessageBus messageBus, string Message)
+        {
+            Contract.Requires(messageBus != null);
+
+            messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Warning });
+        }
 
         /// <summary>
         /// Logs a string as an Error
         /// </summary>
         /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message text</param>
-        public static void Error(this MessageBus messageBus, string Message) => messageBus.Send(new LogMessage(Message) { Level = LogLevel.Error });
+        public static void Error(this MessageBus messageBus, string Message)
+        {
+            Contract.Requires(messageBus != null);
+            messageBus.Send(new LogMessage(Message) { Level = LogLevel.Error });
+        }
 
         /// <summary>
         /// Logs a string as an Error
@@ -90,8 +107,10 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <typeparam name="T">The message source</typeparam>
         /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message text</param>
-        public static void Error<T>(this MessageBus messageBus, string Message) => messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Error });
-
-        #endregion Methods
+        public static void Error<T>(this MessageBus messageBus, string Message)
+        {
+            Contract.Requires(messageBus != null);
+            messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Error });
+        }
     }
 }

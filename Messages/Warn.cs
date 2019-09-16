@@ -6,16 +6,10 @@
     /// <typeparam name="T">The type of the system involved</typeparam>
     public class Warn<T> : LogMessage<T>
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Warning
         /// </summary>
         public override LogLevel Level => LogLevel.Warning;
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Create a new warning with the specified message string
@@ -24,8 +18,6 @@
         public Warn(string message) : base(message)
         {
         }
-
-        #endregion Constructors
     }
 
     /// <summary>
@@ -33,16 +25,10 @@
     /// </summary>
     public class Warn : LogMessage
     {
-        #region Properties
-
         /// <summary>
         /// Will always be Warning
         /// </summary>
         public override LogLevel Level => LogLevel.Warning;
-
-        #endregion Properties
-
-        #region Constructors
 
         /// <summary>
         /// Create a new warning with the specified message string
@@ -51,7 +37,5 @@
         public Warn(string message) : base(message)
         {
         }
-
-        #endregion Constructors
     }
 }
