@@ -1,0 +1,6 @@
+Penguin.Cms.Logging
+Penguin.Cms.Workers
+Penguin.Cms.Workers.Email
+Penguin.Cms.Logging.Entities
+Penguin.Persistence.Repositories.EntityFramework
+Penguin.Workers.Harness
