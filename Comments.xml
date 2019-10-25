@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Penguin.Messaging.Logging.Local</name>
+    </assembly>
+    <members>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log(Penguin.Messaging.Core.MessageBus,System.Exception)">
+            <summary>
+            Logs an error message to the message bus
+            </summary>
+            <param name="messageBus">The message bus</param>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log(Penguin.Messaging.Core.MessageBus,System.String,Penguin.Messaging.Logging.LogLevel)">
+            <summary>
+            Logs a string to the messagebus at the specified level.
+            </summary>
+            <param name="messageBus">The messagebus to use</param>
+            <param name="Message">The message to send</param>
+            <param name="level">The log level</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log``1(Penguin.Messaging.Core.MessageBus,System.Exception)">
+            <summary>
+            Logs an error message to the message bus
+            </summary>
+            <typeparam name="T">The message source</typeparam>
+            <param name="messageBus">The message bus</param>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log``1(Penguin.Messaging.Core.MessageBus,System.String,Penguin.Messaging.Logging.LogLevel)">
+            <summary>
+            Logs a string to the messagebus at the specified level.
+            </summary>
+            <typeparam name="T">The message source</typeparam>
+            <param name="messageBus">The messagebus to use</param>
+            <param name="Message">The message to send</param>
+            <param name="level">The log level</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Warn(Penguin.Messaging.Core.MessageBus,System.String)">
+            <summary>
+            Logs a string as a warning
+            </summary>
+            <param name="messageBus">The message bus to use</param>
+            <param name="Message">The message text</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Warn``1(Penguin.Messaging.Core.MessageBus,System.String)">
+            <summary>
+            Logs a string as a warning
+            </summary>
+            <typeparam name="T">The message source</typeparam>
+            <param name="messageBus">The message bus to use</param>
+            <param name="Message">The message text</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Error(Penguin.Messaging.Core.MessageBus,System.String)">
+            <summary>
+            Logs a string as an Error
+            </summary>
+            <param name="messageBus">The message bus to use</param>
+            <param name="Message">The message text</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Error``1(Penguin.Messaging.Core.MessageBus,System.String)">
+            <summary>
+            Logs a string as an Error
+            </summary>
+            <typeparam name="T">The message source</typeparam>
+            <param name="messageBus">The message bus to use</param>
+            <param name="Message">The message text</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.LogLevel">
+            <summary>
+            The log level to publish
+            </summary>
+        </member>
+        <member name="F:Penguin.Messaging.Logging.LogLevel.Debug">
+            <summary>
+            Intended for debug time messages only
+            </summary>
+        </member>
+        <member name="F:Penguin.Messaging.Logging.LogLevel.Info">
+            <summary>
+            Intended for any messages that are purely informational for later diagnostic
+            </summary>
+        </member>
+        <member name="F:Penguin.Messaging.Logging.LogLevel.Warning">
+            <summary>
+            Something has gone wrong but we can recover from it
+            </summary>
+        </member>
+        <member name="F:Penguin.Messaging.Logging.LogLevel.Error">
+            <summary>
+            Everything has gone terribly wrong and we cant recover
+            </summary>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Debug`1">
+            <summary>
+            Creates a new message for debugging
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Debug`1.Level">
+            <summary>
+            Will always be debug
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Debug`1.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Debug message with the specified string
+            </summary>
+            <param name="message">The message to include</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Debug">
+            <summary>
+            Creates a new message for debugging
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Debug.Level">
+            <summary>
+            Will always be debug
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Debug.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Debug message with the specified string
+            </summary>
+            <param name="message">The message to include</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.ErrorMessage`1">
+            <summary>
+            A log message representing an error
+            </summary>
+            <typeparam name="T">The source of the error</typeparam>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.ErrorMessage`1.Level">
+            <summary>
+            Will always be Error
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage`1.#ctor(System.String)">
+            <summary>
+            Create a new error message using the specified string as a base
+            </summary>
+            <param name="message">The message to use</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage`1.#ctor(System.Exception)">
+            <summary>
+            Creates an instance of the error message using the error as a source
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.ErrorMessage">
+            <summary>
+            A log message representing an error
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.ErrorMessage.Level">
+            <summary>
+            Will always be Error
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage.#ctor(System.String)">
+            <summary>
+            Create a new error message using the specified string as a base
+            </summary>
+            <param name="message">The message to use</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.ErrorMessage.#ctor(System.Exception)">
+            <summary>
+            Creates an instance of the error message using the error as a source
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Info`1">
+            <summary>
+            A new message representing the logging of Informational text
+            </summary>
+            <typeparam name="T">The source of the message</typeparam>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Info`1.Level">
+            <summary>
+            Will always be Info
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Info`1.#ctor(System.String)">
+            <summary>
+            Creates a new instance using the specified message string
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Info">
+            <summary>
+            A new message representing the logging of Informational text
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Info.Level">
+            <summary>
+            Will always be Info
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Info.#ctor(System.String)">
+            <summary>
+            Creates a new instance using the specified message string
+            </summary>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.LogMessage`1">
+            <summary>
+            Any generic log message and associated object
+            </summary>
+            <typeparam name="T">The type of the system involved</typeparam>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.LogMessage`1.Level">
+            <summary>
+            The log level. defaults to Debug
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.LogMessage`1.Message">
+            <summary>
+            The message associated with this event
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.LogMessage`1.#ctor(System.String)">
+            <summary>
+            Creates a new LogMessage with the associated message
+            </summary>
+            <param name="message">the message</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.LogMessage`1.#ctor(System.Exception)">
+            <summary>
+            Creates a new LogMessage with the exception as a base
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.LogMessage">
+            <summary>
+            A generic log message
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.LogMessage.Level">
+            <summary>
+            Defaults to Debug
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.LogMessage.Message">
+            <summary>
+            the associated message for this log
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.LogMessage.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the log message using the specified message
+            </summary>
+            <param name="message">The message to include with the log</param>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.LogMessage.#ctor(System.Exception)">
+            <summary>
+            Creates an instance of the log message using the error as a source
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Warn`1">
+            <summary>
+            Something has gone wrong but we can recover from it
+            </summary>
+            <typeparam name="T">The type of the system involved</typeparam>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Warn`1.Level">
+            <summary>
+            Will always be Warning
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Warn`1.#ctor(System.String)">
+            <summary>
+            Create a new warning with the specified message string
+            </summary>
+            <param name="message">The message string</param>
+        </member>
+        <member name="T:Penguin.Messaging.Logging.Messages.Warn">
+            <summary>
+            Something has gone wrong but we can recover from it
+            </summary>
+        </member>
+        <member name="P:Penguin.Messaging.Logging.Messages.Warn.Level">
+            <summary>
+            Will always be Warning
+            </summary>
+        </member>
+        <member name="M:Penguin.Messaging.Logging.Messages.Warn.#ctor(System.String)">
+            <summary>
+            Create a new warning with the specified message string
+            </summary>
+            <param name="message">The message string</param>
+        </member>
+    </members>
+</doc>
