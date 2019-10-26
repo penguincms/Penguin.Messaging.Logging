@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Messaging.Logging.Local</name>
+        <name>Penguin.Messaging.Logging</name>
     </assembly>
     <members>
         <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log(Penguin.Messaging.Core.MessageBus,System.Exception)">
