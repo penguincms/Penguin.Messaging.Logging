@@ -4,13 +4,15 @@
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Messaging.Logging</PackageProjectUrl>
     <Version>3.0.0</Version>
     <Description>Extended functionality for Penguin.Messaging.Core to support various logging requirements, including extension methods for logging as well as object wrappers to represent various logging levels.</Description>
+    <AssemblyName>Penguin.Messaging.Logging</AssemblyName>
+    <RootNamespace>Penguin.Messaging.Logging</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Penguin.Messaging.Core" Version="3.1.2-T9M1HHH" />
+    <PackageReference Include="Penguin.Messaging.Core" Version="3.1.2-T9M2XAX" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
