@@ -6,6 +6,7 @@
     <Description>Extended functionality for Penguin.Messaging.Core to support various logging requirements, including extension methods for logging as well as object wrappers to represent various logging levels.</Description>
     <AssemblyName>Penguin.Messaging.Logging</AssemblyName>
     <RootNamespace>Penguin.Messaging.Logging</RootNamespace>
+    <DocumentationFile>Penguin.Messaging.Logging.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
