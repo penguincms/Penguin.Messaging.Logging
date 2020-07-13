@@ -13,9 +13,9 @@
         </member>
         <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log(Penguin.Messaging.Core.MessageBus,System.String,Penguin.Messaging.Logging.LogLevel)">
             <summary>
-            Logs a string to the messagebus at the specified level.
+            Logs a string to the message bus at the specified level.
             </summary>
-            <param name="messageBus">The messagebus to use</param>
+            <param name="messageBus">The message bus to use</param>
             <param name="Message">The message to send</param>
             <param name="level">The log level</param>
         </member>
@@ -29,10 +29,10 @@
         </member>
         <member name="M:Penguin.Messaging.Logging.Extensions.MessageBusExtensions.Log``1(Penguin.Messaging.Core.MessageBus,System.String,Penguin.Messaging.Logging.LogLevel)">
             <summary>
-            Logs a string to the messagebus at the specified level.
+            Logs a string to the message bus at the specified level.
             </summary>
             <typeparam name="T">The message source</typeparam>
-            <param name="messageBus">The messagebus to use</param>
+            <param name="messageBus">The message bus to use</param>
             <param name="Message">The message to send</param>
             <param name="level">The log level</param>
         </member>

@@ -35,7 +35,11 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="ex">The exception to log</param>
         public LogMessage(Exception ex) : base()
         {
-            Contract.Requires(ex != null);
+            if (ex is null)
+            {
+                throw new ArgumentNullException(nameof(ex));
+            }
+
             this.Level = LogLevel.Error;
             this.Message = $"{ex.Message}\r\n{ex.StackTrace}";
         }
@@ -71,7 +75,11 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="ex">The exception to log</param>
         public LogMessage(Exception ex) : base()
         {
-            Contract.Requires(ex != null);
+            if (ex is null)
+            {
+                throw new ArgumentNullException(nameof(ex));
+            }
+
             this.Level = LogLevel.Error;
             this.Message = $"{ex.GetType()}: {ex.Message}\r\n{ex.StackTrace}";
         }

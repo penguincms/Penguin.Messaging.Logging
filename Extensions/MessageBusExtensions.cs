@@ -17,7 +17,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="ex">The exception to log</param>
         public static void Log(this MessageBus messageBus, Exception ex)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             while (ex != null)
             {
                 messageBus.Send(new ErrorMessage(ex));
@@ -26,14 +30,18 @@ namespace Penguin.Messaging.Logging.Extensions
         }
 
         /// <summary>
-        /// Logs a string to the messagebus at the specified level.
+        /// Logs a string to the message bus at the specified level.
         /// </summary>
-        /// <param name="messageBus">The messagebus to use</param>
+        /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message to send</param>
         /// <param name="level">The log level</param>
         public static void Log(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             messageBus.Send(new LogMessage(Message) { Level = level });
         }
 
@@ -45,7 +53,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="ex">The exception to log</param>
         public static void Log<T>(this MessageBus messageBus, Exception ex)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             while (ex != null)
             {
                 messageBus.Send(new ErrorMessage<T>(ex));
@@ -54,15 +66,19 @@ namespace Penguin.Messaging.Logging.Extensions
         }
 
         /// <summary>
-        /// Logs a string to the messagebus at the specified level.
+        /// Logs a string to the message bus at the specified level.
         /// </summary>
         /// <typeparam name="T">The message source</typeparam>
-        /// <param name="messageBus">The messagebus to use</param>
+        /// <param name="messageBus">The message bus to use</param>
         /// <param name="Message">The message to send</param>
         /// <param name="level">The log level</param>
         public static void Log<T>(this MessageBus messageBus, string Message, LogLevel level = LogLevel.Info)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             messageBus.Send(new LogMessage<T>(Message) { Level = level });
         }
 
@@ -73,7 +89,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="Message">The message text</param>
         public static void Warn(this MessageBus messageBus, string Message)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             messageBus.Send(new LogMessage(Message) { Level = LogLevel.Warning });
         }
 
@@ -85,7 +105,10 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="Message">The message text</param>
         public static void Warn<T>(this MessageBus messageBus, string Message)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
 
             messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Warning });
         }
@@ -97,7 +120,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="Message">The message text</param>
         public static void Error(this MessageBus messageBus, string Message)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             messageBus.Send(new LogMessage(Message) { Level = LogLevel.Error });
         }
 
@@ -109,7 +136,11 @@ namespace Penguin.Messaging.Logging.Extensions
         /// <param name="Message">The message text</param>
         public static void Error<T>(this MessageBus messageBus, string Message)
         {
-            Contract.Requires(messageBus != null);
+            if (messageBus is null)
+            {
+                throw new ArgumentNullException(nameof(messageBus));
+            }
+
             messageBus.Send(new LogMessage<T>(Message) { Level = LogLevel.Error });
         }
     }
