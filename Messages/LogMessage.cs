@@ -1,6 +1,5 @@
 ﻿using Penguin.Messaging.Abstractions.Messages;
 using System;
-using System.Diagnostics.Contracts;
 
 namespace Penguin.Messaging.Logging.Messages
 {

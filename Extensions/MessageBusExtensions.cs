@@ -1,7 +1,6 @@
 ﻿using Penguin.Messaging.Core;
 using Penguin.Messaging.Logging.Messages;
 using System;
-using System.Diagnostics.Contracts;
 
 namespace Penguin.Messaging.Logging.Extensions
 {
