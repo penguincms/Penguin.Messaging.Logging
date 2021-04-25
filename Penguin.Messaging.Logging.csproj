@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Messaging.Logging</PackageProjectUrl>
-    <Version>5.0.1</Version>
+    <Version>5.0.5</Version>
     <Description>Extended functionality for Penguin.Messaging.Core to support various logging requirements, including extension methods for logging as well as object wrappers to represent various logging levels.</Description>
     <AssemblyName>Penguin.Messaging.Logging</AssemblyName>
     <RootNamespace>Penguin.Messaging.Logging</RootNamespace>
@@ -13,7 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Penguin.Messaging.Core" Version="5.0.2-TADRIFB" />
+    <PackageReference Include="Penguin.Messaging.Core" Version="5.0.4" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
