@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/penguincms/Penguin.Messaging.Logging</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Messaging.Logging</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Extended functionality for Penguin.Messaging.Core to support various logging requirements, including extension methods for logging as well as object wrappers to represent various logging levels.</Description>
     <AssemblyName>Penguin.Messaging.Logging</AssemblyName>
@@ -15,6 +15,7 @@
     </PackageReference>
     <ProjectReference Include="..\Penguin.Debugging\Penguin.Debugging.Local.csproj" />
     <ProjectReference Include="..\Penguin.Extensions.Exceptions\Penguin.Extensions.Exceptions.Local.csproj" />
+    <ProjectReference Include="..\Penguin.FileStreams\Penguin.FileStreams.Local.csproj" />
     <ProjectReference Include="..\Penguin.Messaging.Abstractions\Penguin.Messaging.Abstractions.Local.csproj" />
     <ProjectReference Include="..\Penguin.Messaging.Core\Penguin.Messaging.Core.Local.csproj" />
   </ItemGroup>
