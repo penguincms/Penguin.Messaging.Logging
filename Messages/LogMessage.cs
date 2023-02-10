@@ -25,7 +25,7 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="message">the message</param>
         public LogMessage(string message) : base()
         {
-            this.Message = message;
+            Message = message;
         }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace Penguin.Messaging.Logging.Messages
                 throw new ArgumentNullException(nameof(ex));
             }
 
-            this.Level = LogLevel.Error;
-            this.Message = $"{ex.Message}\r\n{ex.StackTrace}";
+            Level = LogLevel.Error;
+            Message = $"{ex.Message}\r\n{ex.StackTrace}";
         }
     }
 
@@ -65,7 +65,7 @@ namespace Penguin.Messaging.Logging.Messages
         /// <param name="message">The message to include with the log</param>
         public LogMessage(string message) : base()
         {
-            this.Message = message;
+            Message = message;
         }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Penguin.Messaging.Logging.Messages
                 throw new ArgumentNullException(nameof(ex));
             }
 
-            this.Level = LogLevel.Error;
-            this.Message = $"{ex.GetType()}: {ex.Message}\r\n{ex.StackTrace}";
+            Level = LogLevel.Error;
+            Message = $"{ex.GetType()}: {ex.Message}\r\n{ex.StackTrace}";
         }
     }
 }
