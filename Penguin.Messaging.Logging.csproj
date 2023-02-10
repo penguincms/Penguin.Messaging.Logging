@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Messaging.Logging</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCms/Penguin.Messaging.Logging</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Extended functionality for Penguin.Messaging.Core to support various logging requirements, including extension methods for logging as well as object wrappers to represent various logging levels.</Description>
     <AssemblyName>Penguin.Messaging.Logging</AssemblyName>
     <RootNamespace>Penguin.Messaging.Logging</RootNamespace>
     <DocumentationFile>Penguin.Messaging.Logging.xml</DocumentationFile>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
